@@ -7,7 +7,6 @@ import org.springframework.boot.CommandLineRunner;
 import com.jobfinder.demo.models.Job;
 import com.jobfinder.demo.repository.JobRepository;
 
-//@Component
 public class DataLoader implements CommandLineRunner {
 
     private final JobRepository jobRepository;
@@ -21,18 +20,18 @@ public class DataLoader implements CommandLineRunner {
         if (jobRepository.count() == 0) {
             System.out.println("🌱 Cargando ofertas de ejemplo universales...");
 
-            // 1. VENDEDOR (Comercial)
+            // 1. VENDEDOR
             Job job1 = new Job();
             job1.setTitle("Ejecutivo de Ventas / Atención al Cliente");
             job1.setCompany("Movistar");
             job1.setType("Presencial");
-            job1.setMatchScore("Ejemplo"); // Usamos "Ejemplo" en lugar de % para ser genéricos
+            job1.setMatchScore("Ejemplo");
             job1.setDescription(
                     "Buscamos personas proactivas para atención al cliente y ventas en sucursal céntrica. Se ofrece capacitación paga y comisiones.");
             job1.setExternalId("demo-001");
             job1.setJobUrl("https://empleos.movistar.com.ar/");
 
-            // 2. ADMINISTRATIVO (Oficina)
+            // 2. ADMINISTRATIVO
             Job job2 = new Job();
             job2.setTitle("Asistente Administrativo Contable");
             job2.setCompany("Estudio Martínez & Asoc.");
@@ -43,7 +42,7 @@ public class DataLoader implements CommandLineRunner {
             job2.setExternalId("demo-002");
             job2.setJobUrl("https://www.zonajobs.com.ar/");
 
-            // 3. LOGÍSTICA (Operativo)
+            // 3. LOGÍSTICA
             Job job3 = new Job();
             job3.setTitle("Chófer de Reparto / Logística");
             job3.setCompany("Mercado Libre Envíos");

@@ -25,8 +25,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/api/jobs")
 @CrossOrigin(origins = "http://localhost:5173")
-@Tag(name = "Ofertas de Trabajo", description = "Controlador para gestionar, buscar y crear empleos") // 👈 Título de la
-                                                                                                      // sección
+@Tag(name = "Ofertas de Trabajo", description = "Controlador para gestionar, buscar y crear empleos")
 public class JobController {
 
     @Autowired

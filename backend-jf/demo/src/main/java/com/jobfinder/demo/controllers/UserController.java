@@ -23,8 +23,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/api/user")
 @CrossOrigin(origins = "http://localhost:5173")
-@Tag(name = "Usuarios", description = "Gestión de autenticación, perfiles, favoritos y postulaciones") // 👈 Título de
-                                                                                                       // sección
+@Tag(name = "Usuarios", description = "Gestión de autenticación, perfiles, favoritos y postulaciones")
 public class UserController {
 
     @Autowired

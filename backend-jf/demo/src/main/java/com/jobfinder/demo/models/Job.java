@@ -2,7 +2,6 @@ package com.jobfinder.demo.models;
 
 import java.util.List;
 
-// Import de Swagger
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
