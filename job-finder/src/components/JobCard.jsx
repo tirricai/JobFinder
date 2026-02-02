@@ -7,7 +7,7 @@ export default function JobCard({
   company,
   type,
   description,
-  match, // Asumimos que es true/false o un número
+  match,
   isSaved,
   onToggleSave,
   jobUrl,
@@ -25,7 +25,7 @@ export default function JobCard({
           : "bg-white border-gray-100 hover:border-blue-200"
       }`}
     >
-      {/* BADGE DE COMPATIBILIDAD (Corregido) */}
+      {/* BADGE DE COMPATIBILIDAD */}
       <div className="absolute top-4 right-4 flex items-center gap-3 z-10">
         {match && (
           <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full border border-green-200 shadow-sm flex items-center gap-1">
@@ -72,7 +72,6 @@ export default function JobCard({
       {/* HEADER */}
       <div className="flex justify-between items-start mb-2 pr-12">
         <div>
-          {/* 👇 AGREGAMOS 'state' AQUÍ 👇 */}
           <Link
             to={`/job/${uniqueId}`}
             state={{
@@ -121,7 +120,7 @@ export default function JobCard({
         {description}
       </p>
 
-      {/* FOOTER (Separado con justify-between) */}
+      {/* FOOTER */}
       <div
         className={`flex justify-between items-center pt-3 border-t mt-4 ${
           isDark ? "border-gray-700" : "border-gray-50"

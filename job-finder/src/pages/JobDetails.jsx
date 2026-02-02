@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom"; // 1. Importar useLocation
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { getJobById } from "../services/jobService";
 
 export default function JobDetail({ isDark, onToggleSave, savedJobIds = [] }) {
   const { id } = useParams();
   const navigate = useNavigate();
-  const location = useLocation(); // 2. Obtener el estado de la navegación
+  const location = useLocation();
 
   // Intentamos obtener datos pasados por el Link (si existen)
   const initialJobData = location.state?.jobData || null;
 
   const [job, setJob] = useState(initialJobData);
-  // Si ya tenemos datos iniciales, no mostramos "Cargando"
   const [loading, setLoading] = useState(!initialJobData);
 
   useEffect(() => {
@@ -20,14 +19,13 @@ export default function JobDetail({ isDark, onToggleSave, savedJobIds = [] }) {
       try {
         const data = await getJobById(id);
         if (data) {
-          setJob(data); // Si el backend responde, actualizamos con la data fresca
+          setJob(data);
         }
       } catch (error) {
         console.warn(
           "El trabajo no está en BD, mostrando datos locales.",
           error,
         );
-        // No hacemos nada, nos quedamos con initialJobData si existe
       } finally {
         setLoading(false);
       }
@@ -49,7 +47,7 @@ export default function JobDetail({ isDark, onToggleSave, savedJobIds = [] }) {
     });
   };
 
-  const isSaved = job && savedJobIds.includes(job.id || job.externalId); // Verificamos ambos IDs
+  const isSaved = job && savedJobIds.includes(job.id || job.externalId);
 
   // --- CLASES VISUALES ---
   const containerClass = `max-w-4xl mx-auto p-6 min-h-screen ${
@@ -71,7 +69,6 @@ export default function JobDetail({ isDark, onToggleSave, savedJobIds = [] }) {
       <div className="p-10 text-center animate-pulse">Cargando detalles...</div>
     );
 
-  // Solo mostramos error si falló el backend Y no teníamos datos locales
   if (!job)
     return <div className="p-10 text-center">Oferta no encontrada 😔</div>;
 

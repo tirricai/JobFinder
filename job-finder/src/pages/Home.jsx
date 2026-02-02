@@ -56,7 +56,7 @@ export default function Home({
 
   const currentJobs = filteredJobs.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   const handleNext = () => setCurrentPage((p) => Math.min(p + 1, totalPages));
@@ -86,7 +86,7 @@ export default function Home({
 
   return (
     <div className="max-w-4xl mx-auto pb-10">
-      {/* ... (SECCIÓN DE BIENVENIDA / HEADER IGUAL QUE ANTES) ... */}
+      {/* SECCIÓN DE BIENVENIDA */}
       {isInitialState ? (
         <div
           className={`mb-8 p-8 rounded-2xl text-center shadow-sm border transition-colors animate-fade-in-up
