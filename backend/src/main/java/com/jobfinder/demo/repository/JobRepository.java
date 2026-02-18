@@ -1,4 +1,4 @@
-package com.jobfinder.demo.repository; // Asegúrate que el package coincida con tu carpeta
+package com.jobfinder.demo.repository;
 
 import java.util.Optional;
 

@@ -9,9 +9,9 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.jobfinder</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>jobfinder-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>JobFinder API</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
